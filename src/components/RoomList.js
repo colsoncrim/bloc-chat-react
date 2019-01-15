@@ -6,9 +6,10 @@ class RoomList extends Component {
     super(props);
 
     this.state = {
-      rooms: [Room 1, Room 2, Room 3],
+      rooms: [],
     };
   }
+  this.roomsRef = this.props.firebase.database().ref('rooms');
 
    render() {
      return (
@@ -18,10 +19,11 @@ class RoomList extends Component {
             <a href="#">Room 2</a>
             <a href="#">Room 3</a>
          </div>
-       </section>
+      </section>
      )
     }
   }
+
 
 
 export default RoomList;
