@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RoomList from './components/RoomList.js'
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB4T4KiegibwZNifRfA6EBCrIw7BX8wu_8",
@@ -27,8 +27,10 @@ class App extends Component {
            </div>
          </section>
         </header>
+        <RoomList firebase = {firebase} />
+      </div>
 
-    <RoomList firebase = {firebase} />
+
 
 
 
