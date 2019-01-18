@@ -21,9 +21,11 @@ class App extends Component {
         <header className="App-header">
          <section className="roomList">
             <div className="sideNav">
-              <a href="#">Room 1</a>
-              <a href="#">Room 2</a>
-              <a href="#">Room 3</a>
+              <ul>
+                <li><a href="#">Room 1</a></li>
+                <li><a href="#">Room 2</a></li>
+                <li><a href="#">Room 3</a></li>
+              </ul>
            </div>
          </section>
         </header>
