@@ -36,9 +36,17 @@ class RoomList extends Component {
    render() {
      return (
       <React.Fragment>
-       <div className="form">
-        <h2>Create New Room</h2>
-          <form
+
+        <div className="listOfRooms">
+          {this.state.rooms.map((room, i) => (
+            <a><p key={i} onClick={() => this.props.setActiveRoom(room.name)}>
+            Room Name: {room.name}</p></a>
+          ))}
+        </div>
+
+        <div className="form">
+          <h2>Create New Room</h2>
+            <form
               onSubmit={e => {
                 e.preventDefault();
                 this.createRooms(this.state.newRoomName);
@@ -66,7 +74,6 @@ class RoomList extends Component {
     )
    }
   }
-
 
 
 export default RoomList;
