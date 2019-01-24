@@ -25,8 +25,11 @@ class App extends Component {
   }
 
     setActiveRoom = (selectedRoom) => {
+      console.log(selectedRoom.name)
+      console.log(selectedRoom.key)
       this.setState({ activeRoom: selectedRoom.name });
       this.setState({ activeRoomId: selectedRoom.key });
+      
     }
 
   render() {
@@ -45,7 +48,7 @@ class App extends Component {
             activeRoom={this.state.activeRoom}
             activeRoomId={this.state.activeRoomId}
             firebase={firebase} />
-        </div>      
+        </div>
       </div>
     );
   }
