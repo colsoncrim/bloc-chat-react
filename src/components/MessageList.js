@@ -46,12 +46,11 @@ class MessageList extends Component {
 
       {this.state.messages
         .filter(message => {
-          console.log(message.roomId + "is equal to" + this.props.activeRoomId + "?" + message.roomId == this.props.activeRoomId));
+          console.log(message.roomId + "is equal to" + this.props.activeRoomId + "?" + message.roomId == this.props.activeRoomId)
           return message.roomId == this.props.activeRoomId;
         })
         .map((message, i) => (
           <div>
-            <p key={i}>Message {i + 1}</p>
             <p key={i}>Message content: {message.content}</p>
             <p key={i}>Room ID: {message.roomId}</p>
             <p key={i}>Username: {message.username}</p>
