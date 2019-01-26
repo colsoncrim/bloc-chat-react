@@ -10,11 +10,12 @@ class MessageList extends Component {
       messages: [],
     };
 
-    this.messagesRef = this.props.firebase.database().ref('messages');
+    this.messagesRef = this.props.firebase.database().ref('Messages');
   }
 
   componentDidMount() {
     this.messagesRef.on("child_added", snapshot => {
+
       const message = snapshot.val();
       message.key = snapshot.key;
       this.setState({ messages: this.state.messages.concat(message) });
@@ -35,6 +36,8 @@ class MessageList extends Component {
   }
 
   render() {
+
+    const activeRoomId = this.props.activeRoomId
     return (
     <React.Fragment>
       <div className="activeRoom">
@@ -42,7 +45,10 @@ class MessageList extends Component {
       </div>
 
       {this.state.messages
-        .filter(message => message.roomId === this.props.activeRoomId)
+        .filter(message => {
+          console.log(message.roomId + "is equal to" + this.props.activeRoomId + "?" + message.roomId == this.props.activeRoomId));
+          return message.roomId == this.props.activeRoomId;
+        })
         .map((message, i) => (
           <div>
             <p key={i}>Message {i + 1}</p>

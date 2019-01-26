@@ -30,6 +30,8 @@ class App extends Component {
       this.setState({ activeRoom: selectedRoom.name });
       this.setState({ activeRoomId: selectedRoom.key });
       
+      console.log("set active room", this.state.activeRoomId);
+
     }
 
   render() {

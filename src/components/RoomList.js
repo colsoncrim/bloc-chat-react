@@ -8,6 +8,7 @@ class RoomList extends Component {
 
     this.state = {
       rooms: [],
+      newRoomName: ''
     };
 
     this.roomsRef = this.props.firebase.database().ref('rooms')
@@ -52,7 +53,7 @@ class RoomList extends Component {
                 e.preventDefault();
                 this.createRooms(this.state.newRoomName);
               }}>
-            <label for="roomName">Enter a room name</label>
+            <label htmlFor="roomName">Enter a room name</label>
             <input
               type="text"
               id="roomName"
