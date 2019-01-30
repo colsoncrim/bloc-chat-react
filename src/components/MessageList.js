@@ -24,10 +24,13 @@ class MessageList extends Component {
 
   createMessage(newMessage) {
     this.messageRef.push({
-      username: this.props.currentUser ? this.props.currentUser: "userOne",
+      username: this.props.currentUser ? this.props.user.displayName: "Guest",
       content: this.state.newMessageContent,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.activeRoomId
+    });
+    this.setState({
+      newMessageContent:''
     });
   }
 
@@ -56,7 +59,25 @@ class MessageList extends Component {
             <p key={i}>Username: {message.username}</p>
             <p key={i}>Sent at: {message.sentAt}</p>
           </div>
+
         ))};
+
+          <div className = "newMessageTextBox">
+            <h3 className = "newMessageHeader">Write your message here...</h3>
+              <form
+              id = "messageTextBox"
+              onSubmit={ e => {
+                e.preventDefault();
+                this.createMessage(this.state.newMessageContent);
+              }}>
+              <input
+              type = "text"
+              id = "roomName"
+              value = {this.state.newMessageContent}
+              onChange = { (e) => this.handleChange(e) } />
+              <input type = "submit" />
+              </form>
+          </div>
 
       </React.Fragment>
     )
