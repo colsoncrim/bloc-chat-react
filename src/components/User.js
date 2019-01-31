@@ -28,7 +28,7 @@ class User extends Component {
   render() {
     return (
       <React.Fragment>
-      <div>
+      <div className="currentUser">
         <div>Current User: {this.props.user}</div>
         <button type="submit" onClick={this.signInWithPopup}>Sign In</button>
         <button type="submit" onClick={this.signOut}>Sign Out</button>

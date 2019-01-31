@@ -4,6 +4,7 @@ import RoomList from './components/RoomList.js'
 import MessageList from './components/MessageList.js'
 import User from './components/User.js'
 import * as firebase from 'firebase';
+import './App.css';
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB4T4KiegibwZNifRfA6EBCrIw7BX8wu_8",
@@ -43,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="listOfRooms">Rooms</div>
+        <div className="listOfRooms"></div>
 
         <div className="roomList">
           <RoomList
