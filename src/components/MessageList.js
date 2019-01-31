@@ -8,6 +8,7 @@ class MessageList extends Component {
 
     this.state = {
       messages: [],
+      newMessageContent:null
     };
 
     this.messagesRef = this.props.firebase.database().ref('Messages');
@@ -23,7 +24,7 @@ class MessageList extends Component {
   }
 
   createMessage(newMessage) {
-    this.messageRef.push({
+    this.messagesRef.push({
       username: this.props.currentUser ? this.props.user.displayName: "Guest",
       content: this.state.newMessageContent,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
