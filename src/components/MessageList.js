@@ -56,7 +56,7 @@ class MessageList extends Component {
         .map((message, i) => (
           <div>
             <p key={i}>Message content: {message.content}</p>
-            <p key={i}>Room ID: {message.roomId}</p>
+
             <p key={i}>Username: {message.username}</p>
             <p key={i}>Sent at: {message.sentAt}</p>
           </div>
