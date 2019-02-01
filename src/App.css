@@ -1,6 +1,6 @@
 .App {
   /* text-align: center; */
-
+  display: flex;
 
 }
 
@@ -56,20 +56,30 @@ li {
 
 .roomList {
   background-color: #D3D3D3;
-  border: solid black;
-  border-radius: 5px;
+  /* border: solid black; */
+  /* border-radius: 5px; */
   width: 30%;
-  height: 600px;
-  margin: 0.7em;
+  height: 800px;
+  /* margin: 0.7em; */
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  width: 100%;
 }
 
 .messageList {
   background-color: #D3D3D3;
-  border: solid black;
-  border-radius: 5px;
+  /* border: solid black; */
+  /* border-radius: 5px; */
   width: 95%;
-  margin: 0.7em;
-  float: right;
+  /* margin: 0.7em; */
+  /* float: right; */
+
+
 }
 
 .user {
