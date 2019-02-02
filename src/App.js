@@ -38,7 +38,7 @@ class App extends Component {
     }
 
     setUser = user => {
-      this.setState({ currentUser: user.displayName });
+      this.setState({ currentUser: user ? user.displayName : "Guest" });
     }
 
   render() {
