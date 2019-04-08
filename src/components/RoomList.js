@@ -39,7 +39,7 @@ class RoomList extends Component {
       <React.Fragment>
 
         <div className="listOfRooms">
-        <h2>Bloc Chat</h2>
+        
           <ul>
             {this.state.rooms.map((room, i) => (
               <a key={i} onClick={() => this.props.setActiveRoom(room)}>
@@ -50,20 +50,22 @@ class RoomList extends Component {
         </div>
 
         <div className="form">
-          <h4>Create New Room</h4>
+
             <form
               onSubmit={e => {
                 e.preventDefault();
                 this.createRooms(this.state.newRoomName);
               }}>
-            <label htmlFor="roomName">Enter a room name</label>
+            <label htmlFor="roomName">Create New Room</label>
             <input
               type="text"
               id="roomName"
               value={this.state.newRoomName}
               onChange={e => this.handleChange(e)}/>
 
-            <input type="submit"/>
+              <div className="wrapOne">
+                <input type="submit" id="submitButton"/>
+              </div>
           </form>
         </div>
 

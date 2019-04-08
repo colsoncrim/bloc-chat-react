@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import RoomList from './components/RoomList.js'
 import MessageList from './components/MessageList.js'
 import User from './components/User.js'
 import * as firebase from 'firebase';
 import './App.css';
+import Logo from '../src/mychatlogo.png'
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB4T4KiegibwZNifRfA6EBCrIw7BX8wu_8",
@@ -44,9 +46,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <div className="listOfRooms"></div>
 
         <div className="roomList">
+        <img src={Logo} width="100%"  alt="My Chat Logo"/>
+
           <RoomList
             setActiveRoom={this.setActiveRoom.bind(this)}
             firebase = {firebase} />

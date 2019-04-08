@@ -45,7 +45,7 @@ class MessageList extends Component {
     return (
     <React.Fragment>
       <div className="activeRoom">
-        Active Room: {this.props.activeRoom}
+         {this.props.activeRoom}
       </div>
 
       {this.state.messages
@@ -53,17 +53,30 @@ class MessageList extends Component {
           console.log(message.roomId + "is equal to" + this.props.activeRoomId + "?" + message.roomId == this.props.activeRoomId)
           return message.roomId == this.props.activeRoomId;
         })
+
+        let messageDelivered = [{sentAt:10:23}, {sentAt:10:21}, {sentAt:10:26}]
+        var sortTime = messageDelivered .sort((a, b) =>
+          {
+            return a.sentAt-b.sentAt
+          })
+
         .map((message, i) => (
-          <div>
-            <p key={i}>Message content: {message.content}</p>
-            <p key={i}>Username: {message.username}</p>
-            <p key={i}>Sent at: {message.sentAt}</p>
+
+          <div className="messageBubble">
+
+          <ul>
+            <li><p key={i} className="messageContent"> {message.content}</p></li>
+            <li><p key={i} className="userSignature"> -{message.username}</p></li>
+            <li><p key={i}> {message.sentAt}</p></li>
+          </ul>
           </div>
+
+
 
         ))};
 
           <div className = "newMessageTextBox">
-            <h3 className = "newMessageHeader">Write your message here...</h3>
+
               <form
               id = "messageTextBox"
               onSubmit={ e => {
@@ -72,10 +85,12 @@ class MessageList extends Component {
               }}>
               <input
               type = "text"
-              id = "roomName"
+              id = "messageInput"
               value = {this.state.newMessageContent}
               onChange = { (e) => this.handleChange(e) } />
-              <input type = "submit" />
+              <div className="wrapTwo">
+                <input type = "submit" value="Send" id="sendButton"/>
+              </div>
               </form>
           </div>
 
