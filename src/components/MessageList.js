@@ -52,28 +52,21 @@ class MessageList extends Component {
         .filter(message => {
           console.log(message.roomId + "is equal to" + this.props.activeRoomId + "?" + message.roomId == this.props.activeRoomId)
           return message.roomId == this.props.activeRoomId;
-        })
-
-        this.state.messages.sort((a, b) =>
-          {
-            return a.sentAt - b.sentAt;
-          })
-          
-        .map((message, i) => (
-
-
+        }).sort((a, b) => {
+          console.log(a.sentAt + " vs " + b.sentAt + "; " + typeof a.sentAt);
+          return a.sentAt - b.sentAt;
+        }).map((message, i) => (
           <div className="messageBubble">
-
-          <ul>
-            <li><p key={i} className="messageContent"> {message.content}</p></li>
-            <li><p key={i} className="userSignature"> -{message.username}</p></li>
-            <li><p key={i}> {message.sentAt}</p></li>
-          </ul>
+            <ul>
+              <li><p key={i} className="messageContent"> {message.content}</p></li>
+              <li><p key={i} className="userSignature"> -{message.username}</p></li>
+              <li><p key={i}> {message.sentAt}</p></li>
+            </ul>
           </div>
+        ))
+      };
 
 
-
-        ))};
 
           <div className = "newMessageTextBox">
 
