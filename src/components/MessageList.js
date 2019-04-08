@@ -54,13 +54,13 @@ class MessageList extends Component {
           return message.roomId == this.props.activeRoomId;
         })
 
-        let messageDelivered = [{sentAt:10:23}, {sentAt:10:21}, {sentAt:10:26}]
-        var sortTime = messageDelivered .sort((a, b) =>
+        this.state.messages.sort((a, b) =>
           {
-            return a.sentAt-b.sentAt
+            return a.sentAt - b.sentAt;
           })
-
+          
         .map((message, i) => (
+
 
           <div className="messageBubble">
 
