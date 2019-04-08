@@ -58,9 +58,9 @@ class MessageList extends Component {
         }).map((message, i) => (
           <div className="messageBubble">
             <ul>
-              <li><p key={i} className="messageContent"> {message.content}</p></li>
-              <li><p key={i} className="userSignature"> -{message.username}</p></li>
-              <li><p key={i}> {message.sentAt}</p></li>
+              <li> key={i} className="messageContent" {message.content}</li>
+              <li> key={i} className="userSignature" -{message.username}</li>
+              <li> key={i} {message.sentAt}</li>
             </ul>
           </div>
         ))
