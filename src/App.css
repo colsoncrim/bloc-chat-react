@@ -11,20 +11,19 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.form {
-text-align: center;
-/*position: absolute;
-top: 50%;
-left: 50%;*/
+li {
+  list-style: none;
 }
+
+/* ROOM LIST COMPONENT */
 
 .listOfRooms {
   font-size: 20px;
   line-height: 2.6;
 }
 
-.listOfRooms img {
-
+.form {
+  text-align: center;
 }
 
 .listOfRooms li {
@@ -32,37 +31,23 @@ left: 50%;*/
   width: 100%;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .listOfRooms ul {
   padding: 0;
 }
 
-li {
-  list-style: none;
+.roomList {
+  background-color: #F0F0F0;
+  width: 30%;
+  height: 800px;
+  border-right: 1px solid lightgrey;
 }
 
-#messageInput {
-  width: 90%;
+#roomName {
+  width: 80%;
   height: 40px;
-}
-
-.wrapOne {
-  height: 100%;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  /* padding-top: 10px; */
-}
-
-.wrapTwo {
-  height: 100%;
-  display: flex;
-  float: right;
-}
-
-input[type=submit] {
-  border: none;
 }
 
 #submitButton {
@@ -88,6 +73,91 @@ input[type=submit] {
   background-color: #6c76f7;
 }
 
+/* MESSAGE LIST COMPONENT */
+
+.messageList {
+  background-color: white;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.activeRoom {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Arimo', sans-serif;
+}
+
+#messageInput {
+  width: 90%;
+  height: 40px;
+}
+
+#messageTextBox {
+  width: 100%;
+}
+
+.newMessageTextBox {
+  background-color: white;
+  border-top: 1px solid lightgrey;
+  background-color: #F0F0F0;
+  height: 50px;
+}
+
+.messageBubble {
+  background-image: linear-gradient(to left, #a0a0a0, #cccccc);
+  color: #232323;
+  text-align: right;
+  width: 100%;
+  border:3px solid white;
+}
+
+.messageBubble:nth-child(even) {
+  background-image: linear-gradient(to right, #4e59f4, #9ea5ff);
+  color: white;
+  text-align: left;
+}
+
+.messageBubble ul {
+  margin: 0;
+}
+
+.messageBubble p {
+  padding-right: 25px;
+  margin: 0;
+}
+
+.messageContent  {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wrapOne {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapTwo {
+  height: 100%;
+  display: flex;
+  float: right;
+}
+
+.userSignature  {
+  font-size: 14px;
+}
+
+input[type=submit] {
+  border: none;
+}
+
 #sendButton {
   border-radius: 5px;
   padding: 5px;
@@ -110,6 +180,15 @@ input[type=submit] {
 
 #sendButton:hover {
   background-color: #6c76f7;
+}
+
+/* USER COMPONENT */
+
+.currentUser {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  text-align: center;
 }
 
 #signIn {
@@ -158,97 +237,4 @@ input[type=submit] {
 
 #signOut:hover {
   background-color: #d6d6d6;
-}
-
-.roomList {
-  background-color: #F0F0F0;
-  width: 30%;
-  height: 800px;
-  border-right: 1px solid lightgrey;
-}
-
-.container {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-self: flex-end;
-  width: 100%;
-}
-
-.messageList {
-  background-color: white;
-  width: 100%;
-  /* height: 1000px; */
-}
-
-.activeRoom {
-text-align: center;
-font-size: 35px;
-font-family: 'Arimo', sans-serif;
-}
-
-.user {
-
-}
-
-.currentUser {
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  text-align: center;
-}
-
-#messageTextBox {
-  width: 100%;
-}
-
-.newMessageTextBox {
-  background-color: white;
-  border-top: 1px solid lightgrey;
-  background-color: #F0F0F0;
-  height: 50px;
-}
-
-.messageBubble {
-  background-image: linear-gradient(to left, #a0a0a0, #cccccc);
-  color: #232323;
-  /* border-radius: 20px; */
-  text-align: right;
-  width: 100%;
-  border:3px solid white;
-}
-
-.messageBubble:nth-child(even) {
-  background-image: linear-gradient(to right, #4e59f4, #9ea5ff);
-  color: white;
-  text-align: left;
-}
-
-.messageBubble ul {
-  margin: 0;
-}
-
-.messageBubble li {
-
-}
-
-.messageBubble p {
-  /* font-size: 22px; */
-  /* line-height: .5; */
-  padding-right: 25px;
-  margin: 0;
-}
-
-.messageContent  {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.userSignature  {
-  font-size: 14px;
-}
-
-#roomName {
-  width: 80%;
-  height: 40px;
 }

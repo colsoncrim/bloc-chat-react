@@ -39,18 +39,14 @@ class RoomList extends Component {
       <React.Fragment>
 
         <div className="listOfRooms">
-        
           <ul>
             {this.state.rooms.map((room, i) => (
               <a key={i} onClick={() => this.props.setActiveRoom(room)}>
               <li>{room.name}</li></a>
             ))}
           </ul>
-
         </div>
-
         <div className="form">
-
             <form
               onSubmit={e => {
                 e.preventDefault();

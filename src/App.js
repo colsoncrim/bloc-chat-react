@@ -46,12 +46,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <div className="listOfRooms"></div>
-
         <div className="roomList">
         <img src={Logo} width="100%"  alt="My Chat Logo"/>
-
           <RoomList
             setActiveRoom={this.setActiveRoom.bind(this)}
             firebase = {firebase} />
@@ -64,7 +61,6 @@ class App extends Component {
                 firebase={firebase}
                 user={this.state.currentUser} />
             </div>
-
             <div className="user">
               <User
                 firebase={firebase}

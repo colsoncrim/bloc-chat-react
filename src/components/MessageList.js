@@ -56,20 +56,17 @@ class MessageList extends Component {
           console.log(a.sentAt + " vs " + b.sentAt + "; " + typeof a.sentAt);
           return a.sentAt - b.sentAt;
         }).map((message, i) => (
-          <div className="messageBubble">
+          <div key={i} className="messageBubble">
             <ul>
-              <li> key={i} className="messageContent" {message.content}</li>
-              <li> key={i} className="userSignature" -{message.username}</li>
-              <li> key={i} {message.sentAt}</li>
+              <li className="messageContent"> {message.content}</li>
+              <li className="userSignature"> -{message.username}</li>
+              <li> {message.sentAt}</li>
             </ul>
           </div>
         ))
       };
 
-
-
           <div className = "newMessageTextBox">
-
               <form
               id = "messageTextBox"
               onSubmit={ e => {
@@ -86,7 +83,6 @@ class MessageList extends Component {
               </div>
               </form>
           </div>
-
       </React.Fragment>
     )
   }
